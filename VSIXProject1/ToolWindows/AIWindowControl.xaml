@@ -9,19 +9,115 @@
              xmlns:catalog="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.ImageCatalog"
              xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"
              mc:Ignorable="d"
-             d:DesignHeight="300"
-             d:DesignWidth="300"
+             d:DesignHeight="550"
+             d:DesignWidth="900"
+             Background="Transparent"
              Name="MyToolWindow">
-    <Grid>
-        <StackPanel Orientation="Vertical">
-            <Label x:Name="lblHeadline"
-                   Margin="10"
-                   HorizontalAlignment="Center">Title</Label>
-            <Button Content="Click me!"
-                    Click="button1_Click"
-                    Width="120"
-                    Height="80"
-                    Name="button1" />
-        </StackPanel>
-    </Grid>
+
+    <Border Background="#272537">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="53*"/>
+                <RowDefinition Height="48*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.Resources>
+                <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+                       TargetType="{x:Type RadioButton}"
+                       x:Key="MenuButtonTheme"
+                       >
+                    <Style.Setters>
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="RadioButton">
+                                    <Grid VerticalAlignment="Stretch"
+                                          HorizontalAlignment="Stretch"
+                                          Background="{TemplateBinding Background}"
+                                          >
+
+                                        <TextBlock
+                                            Text="{TemplateBinding Property = Content}"
+                                            VerticalAlignment="Center"
+                                            Margin="10 0 0 0 "
+                                            />
+
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="5"/>
+
+                    </Style.Setters>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="#22202f"/>
+                        </Trigger>
+                    </Style.Triggers>
+
+                </Style>
+            </Grid.Resources>
+
+            <TextBlock Text="M.D.A.I"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Margin="35,0,0,0"
+                   Foreground="AntiqueWhite"
+                   FontSize="22" Height="29" Width="70"
+            />
+
+            <StackPanel Grid.Row="1" >
+
+                <RadioButton
+                    Content="Home"
+                    Height="45"
+                    Foreground="AntiqueWhite"
+                    FontSize="15"
+                    Style="{StaticResource MenuButtonTheme}" Checked="RadioButton_Checked"
+                    />
+                <RadioButton
+                    Content="Documenting"
+                    Height="45"
+                    Foreground="AntiqueWhite"
+                    FontSize="15"
+                    Style="{StaticResource MenuButtonTheme}"
+                    />
+                <RadioButton
+                    Content="Refactoring"
+                    Height="45"
+                    Foreground="AntiqueWhite"
+                    FontSize="15"
+                    Style="{StaticResource MenuButtonTheme}"
+                    />
+                <RadioButton
+                    Content="Testing"
+                    Height="45"
+                    Foreground="AntiqueWhite"
+                    FontSize="15"
+                    Style="{StaticResource MenuButtonTheme}"
+                    />
+
+            </StackPanel>
+
+            <ContentControl Grid.Row="1"
+                            Grid.RowSpan="2"
+                            Grid.Column="1"
+                            Margin="10"/>
+            
+            
+
+        </Grid>
+
+
+    </Border>
 </UserControl>

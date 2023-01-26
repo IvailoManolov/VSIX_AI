@@ -9,7 +9,13 @@ namespace VSIXProject1
         {
             var docView = await VS.Documents.GetActiveDocumentViewAsync();
 
-            var selection = docView?.TextView.Selection.SelectedSpans;
+            var selection = docView?.TextView.Selection.SelectedSpans.FirstOrDefault();
+
+            if(selection.HasValue)
+            {
+                var guid = Guid.NewGuid().ToString();
+                docView.TextBuffer.Replace(selection.Value, guid);
+            }
         }
     }
 }

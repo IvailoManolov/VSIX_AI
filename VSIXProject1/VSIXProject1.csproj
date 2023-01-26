@@ -46,6 +46,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Commands\OpenAIWindowCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Core\ObservableObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\MyCommand.cs" />
     <Compile Include="ToolWindows\AIWindow.cs" />
@@ -90,10 +92,16 @@
   <ItemGroup>
     <PackageReference Include="Community.VisualStudio.VSCT" Version="16.0.29.6" PrivateAssets="all" />
     <PackageReference Include="Community.VisualStudio.Toolkit.17" Version="17.0.430" ExcludeAssets="Runtime" />
+    <PackageReference Include="MaterialDesignThemes">
+      <Version>4.7.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.0.5232" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="API-Accessor\" />
+    <Folder Include="MVVM\Model\" />
+    <Folder Include="MVVM\ViewModel\" />
+    <Folder Include="MVVM\View\" />
+    <Folder Include="Theme\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="ToolWindows\AIWindowControl.xaml">

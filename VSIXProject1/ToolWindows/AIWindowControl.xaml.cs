@@ -15,5 +15,10 @@ namespace VSIXProject1
             VS.Commands.ExecuteAsync(PackageGuids.VSIXProject1, PackageIds.OpenAIWindow).FireAndForget();
 
         }
+
+        private void RadioButton_Checked()
+        {
+
+        }
     }
 }
