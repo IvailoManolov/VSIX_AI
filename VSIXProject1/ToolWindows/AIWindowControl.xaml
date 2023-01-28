@@ -8,11 +8,18 @@
              xmlns:util="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Utilities"
              xmlns:catalog="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.ImageCatalog"
              xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"
+             xmlns:viewModel="clr-namespace:VSIXProject1.MVVM.ViewModel"
+             xmlns:view="clr-namespace:VSIXProject1.MVVM.View"
              mc:Ignorable="d"
              d:DesignHeight="550"
              d:DesignWidth="900"
              Background="Transparent"
              Name="MyToolWindow">
+
+    <UserControl.DataContext>
+        <viewModel:MainViewModel/>
+    </UserControl.DataContext>
+
 
     <Border Background="#272537">
 
@@ -29,6 +36,15 @@
             </Grid.RowDefinitions>
 
             <Grid.Resources>
+
+                <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                    <view:HomeView/>
+                </DataTemplate>
+                
+                <DataTemplate DataType="{x:Type viewModel:DocumentingViewModel}">
+                    <view:DocumentingView/>
+                </DataTemplate>
+                
                 <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
                        TargetType="{x:Type RadioButton}"
                        x:Key="MenuButtonTheme"
@@ -67,6 +83,8 @@
 
                 </Style>
             </Grid.Resources>
+            
+            
 
             <TextBlock Text="M.D.A.I"
                    VerticalAlignment="Center"
@@ -83,13 +101,16 @@
                     Height="45"
                     Foreground="AntiqueWhite"
                     FontSize="15"
-                    Style="{StaticResource MenuButtonTheme}" Checked="RadioButton_Checked"
+                    IsChecked="True"
+                    Command="{Binding HomeViewCommand}"
+                    Style="{StaticResource MenuButtonTheme}" 
                     />
                 <RadioButton
                     Content="Documenting"
                     Height="45"
                     Foreground="AntiqueWhite"
                     FontSize="15"
+                    Command="{Binding DocumentingViewCommand}"
                     Style="{StaticResource MenuButtonTheme}"
                     />
                 <RadioButton
@@ -112,7 +133,9 @@
             <ContentControl Grid.Row="1"
                             Grid.RowSpan="2"
                             Grid.Column="1"
-                            Margin="10"/>
+                            Margin="10"
+                            Content="{Binding CurrentView}"
+                            />
             
             
 

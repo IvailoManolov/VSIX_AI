@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="VSIXProject1.MVVM.View.UserControl1"
+﻿<UserControl x:Class="VSIXProject1.MVVM.View.HomeView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
+
         <TextBlock Text="Discover us!"
                    Foreground="AntiqueWhite"
                    HorizontalAlignment="Left"
@@ -33,7 +34,7 @@
 
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Coding was never simpler&#x0a; with the help of AI"
+                        <TextBlock Text="Coding was never easier&#x0a;with our AI"
                                    Foreground="AntiqueWhite"
                                    FontSize="28"
                                    Margin="20 10 10 0"/>
@@ -43,8 +44,64 @@
                                    FontSize="18"
                                    Margin="20 10 10 0"/>
                     </StackPanel>
+
+                    <Image Width="234"
+						   Height="201"
+						   Source="/Images/AIRobot.png"
+						   HorizontalAlignment="Right"
+						   VerticalAlignment="Bottom" Margin="0,0,0,-25"
+						   />
                 </Grid>
             </Border>
+
+            <Border Width="200"
+					Height="200"
+					CornerRadius="10"
+					Margin="45,0,0,0">
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#ffc554" Offset="0.0"/>
+                        <GradientStop Color="#FFC0B56C" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+            </Border>
+        </StackPanel>
+
+        <StackPanel>
+
+            <TextBlock Text="Mostly used"
+                   Foreground="AntiqueWhite"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="0 10 0 10"/>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,0,0,10">
+                <Border Width="150"
+						Height="150"
+						Margin="0"
+						Background="#FF4DBEFF"
+						CornerRadius="10"/>
+                <Border Width="150"
+						Height="150"
+						Margin="15 0 0 0"
+						Background="#FF68C8FF"
+						CornerRadius="10"/>
+                <Border Width="150"
+						Height="150"
+						Margin="15 0 0 0"
+						Background="#FF8AD4FF"
+						CornerRadius="10"/>
+                <Border Width="150"
+						Height="150"
+						Margin="15 0 0 0"
+						Background="#FFE8F7FF"
+						CornerRadius="10"/>
+
+            </StackPanel>
+
         </StackPanel>
     </StackPanel>
 </UserControl>
