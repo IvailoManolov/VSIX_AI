@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 
 namespace VSIXProject1
-{
+{ 
     public partial class AIWindowControl : UserControl
     {
         public AIWindowControl()
