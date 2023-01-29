@@ -16,7 +16,7 @@ namespace VSIXProject1.MVVM.ViewModel
 		{
 			get { return _currentView; }
 			set 
-			{ 
+			{
 				_currentView = value;
 				OnPropertyChanged();
 			}
@@ -39,9 +39,6 @@ namespace VSIXProject1.MVVM.ViewModel
             {
                 CurrentView = DocumentView;
             });
-
-
         }
-
 	}
 }

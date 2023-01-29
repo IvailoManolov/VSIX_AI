@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace VSIXProject1.MVVM.View
         public DocumentingView()
         {
             InitializeComponent();
+        }
+        private void TextBox_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effects = DragDropEffects.Copy;
+        }
+        private void TextBox_Drop(object sender, DragEventArgs e)
+        {
+            TextRange textRange = new TextRange(CodeBox.Document.ContentStart, CodeBox.Document.ContentEnd);
         }
     }
 }

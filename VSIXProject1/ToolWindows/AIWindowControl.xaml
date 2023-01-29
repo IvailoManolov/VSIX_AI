@@ -21,7 +21,7 @@
     </UserControl.DataContext>
 
 
-    <Border Background="#272537">
+    <Border Background="Transparent">
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -40,11 +40,11 @@
                 <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                     <view:HomeView/>
                 </DataTemplate>
-                
+
                 <DataTemplate DataType="{x:Type viewModel:DocumentingViewModel}">
                     <view:DocumentingView/>
                 </DataTemplate>
-                
+
                 <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
                        TargetType="{x:Type RadioButton}"
                        x:Key="MenuButtonTheme"
@@ -83,8 +83,6 @@
 
                 </Style>
             </Grid.Resources>
-            
-            
 
             <TextBlock Text="M.D.A.I"
                    VerticalAlignment="Center"
@@ -136,8 +134,19 @@
                             Margin="10"
                             Content="{Binding CurrentView}"
                             />
-            
-            
+
+            <StackPanel Grid.Row="2">
+                
+                <Button Width="130"
+                        Margin="0,195,0,0"
+                        Height="35"
+                        BorderBrush="DarkGreen"
+                        Background="#FF76FF76"
+                        BorderThickness="1"
+                        Content="TEST">
+                    
+                </Button>
+            </StackPanel>
 
         </Grid>
 

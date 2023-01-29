@@ -4,10 +4,55 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VSIXProject1.MVVM.View"
+             xmlns:viewModel="clr-namespace:VSIXProject1.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             Background="Red">
-    <Grid>
+             d:DesignHeight="485" d:DesignWidth="600"
+             Background="Transparent">
+
+
+
+    <UserControl.DataContext>
+        <viewModel:DocumentingViewModel/>
+    </UserControl.DataContext>
+    
+    <StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+
+            <Border
+                Width="600"
+                Height="250"
+                Padding="5"
+                Background="Transparent">
+
+
+                <Grid>
+                    <StackPanel>
+                        <RichTextBox x:Name="CodeBox" TextElement.Foreground="White" Foreground="White" AllowDrop="True" PreviewDragEnter="TextBox_DragEnter" PreviewDrop="TextBox_Drop" Background="Transparent" AcceptsReturn="True" Height="225" FontSize="15"/>
+                    </StackPanel>
+                </Grid>
+
+            </Border>
             
-    </Grid>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Border
+                Width="600"
+                Height="250"
+                Padding="5"
+                Background="Transparent">
+
+
+                <Grid>
+                    <StackPanel>
+                        <TextBox x:Name="c"  Background="Transparent" AllowDrop="False" AcceptsReturn="True" Height="225" Text="" Foreground="White" FontSize="15"/>
+                    </StackPanel>
+                </Grid>
+
+            </Border>
+        </StackPanel>
+
+
+    </StackPanel>
 </UserControl>
